@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartupActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/kana"
+        android:layout_width="352dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center"
+        android:text="@string/title_header"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kana">
+
+        <Button
+            android:id="@+id/selectAllButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@android:string/selectAll"
+            tools:layout_editor_absoluteX="280dp"
+            tools:layout_editor_absoluteY="317dp" />
+
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/clear"
+            tools:layout_editor_absoluteX="280dp"
+            tools:layout_editor_absoluteY="261dp" />
+
+        <Button
+            android:id="@+id/startButton"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/start"
+            tools:layout_editor_absoluteX="280dp"
+            tools:layout_editor_absoluteY="205dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/hiraganaLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toStartOf="@+id/katakanaLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLayout">
+
+        <TextView
+            android:id="@+id/hiragana"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/hiragana"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/check_a"
+            app:layout_constraintStart_toStartOf="@+id/check_a"
+            app:layout_constraintTop_toBottomOf="@+id/kana" />
+
+        <ScrollView
+            android:id="@+id/scrollView5"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/navigation"
+            app:layout_constraintEnd_toStartOf="@+id/hiraganaLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonLayout">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/check_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_a"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hiragana" />
+
+                <CheckBox
+                    android:id="@+id/check_ka"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_ka"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/check_a" />
+
+                <CheckBox
+                    android:id="@+id/check_sa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_sa"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/check_ka" />
+
+                <CheckBox
+                    android:id="@+id/check_ta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_ta"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/check_sa" />
+
+                <CheckBox
+                    android:id="@+id/check_na"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_na"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/check_ta" />
+
+                <CheckBox
+                    android:id="@+id/check_ha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_ha"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/check_na" />
+
+                <CheckBox
+                    android:id="@+id/check_ma"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_ma"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/check_ha" />
+
+                <CheckBox
+                    android:id="@+id/check_ya"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_ya"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/check_ma" />
+
+                <CheckBox
+                    android:id="@+id/check_ra"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_ra"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/check_ya" />
+
+                <CheckBox
+                    android:id="@+id/check_wa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_wa"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/check_ra" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/katakanaLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/hiraganaLayout"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLayout">
+
+        <TextView
+            android:id="@+id/katakana"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/katakana"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/kana" />
+
+        <ScrollView
+            android:id="@+id/scrollView4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/navigation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/scrollView5"
+            app:layout_constraintTop_toBottomOf="@+id/buttonLayout">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/kcheck_a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/kcheck_a"
+                    app:layout_constraintEnd_toEndOf="@+id/katakana"
+                    app:layout_constraintHorizontal_bias="0.325"
+                    app:layout_constraintStart_toStartOf="@+id/katakana"
+                    app:layout_constraintTop_toBottomOf="@+id/katakana" />
+
+                <CheckBox
+                    android:id="@+id/kcheck_ka"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/kcheck_ka"
+                    app:layout_constraintStart_toStartOf="@+id/kcheck_a"
+                    app:layout_constraintTop_toBottomOf="@+id/kcheck_a" />
+
+                <CheckBox
+                    android:id="@+id/kcheck_sa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/kcheck_sa"
+                    app:layout_constraintStart_toStartOf="@+id/kcheck_ka"
+                    app:layout_constraintTop_toBottomOf="@+id/kcheck_ka" />
+
+                <CheckBox
+                    android:id="@+id/kcheck_ta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/kcheck_ta"
+                    app:layout_constraintStart_toStartOf="@+id/kcheck_sa"
+                    app:layout_constraintTop_toBottomOf="@+id/kcheck_sa" />
+
+                <CheckBox
+                    android:id="@+id/kcheck_na"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/kcheck_na"
+                    app:layout_constraintStart_toStartOf="@+id/kcheck_ta"
+                    app:layout_constraintTop_toBottomOf="@+id/kcheck_ta" />
+
+                <CheckBox
+                    android:id="@+id/kcheck_ha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/kcheck_ha"
+                    app:layout_constraintStart_toStartOf="@+id/kcheck_na"
+                    app:layout_constraintTop_toBottomOf="@+id/kcheck_na" />
+
+                <CheckBox
+                    android:id="@+id/kcheck_ma"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/kcheck_ma"
+                    app:layout_constraintStart_toStartOf="@+id/kcheck_ha"
+                    app:layout_constraintTop_toBottomOf="@+id/kcheck_ha" />
+
+                <CheckBox
+                    android:id="@+id/kcheck_ya"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/kcheck_ya"
+                    app:layout_constraintStart_toStartOf="@+id/kcheck_ma"
+                    app:layout_constraintTop_toBottomOf="@+id/kcheck_ma" />
+
+                <CheckBox
+                    android:id="@+id/kcheck_ra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/kcheck_ra"
+                    app:layout_constraintStart_toStartOf="@+id/kcheck_ya"
+                    app:layout_constraintTop_toBottomOf="@+id/kcheck_ya" />
+
+                <CheckBox
+                    android:id="@+id/kcheck_wa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/kcheck_wa"
+                    app:layout_constraintStart_toStartOf="@+id/kcheck_ra"
+                    app:layout_constraintTop_toBottomOf="@+id/kcheck_ra" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        app:itemIconTint="@color/selector"
+        app:itemTextColor="@color/selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/navigation" />
+
+</android.support.constraint.ConstraintLayout>

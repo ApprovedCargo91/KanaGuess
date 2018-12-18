@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_kana"
+        android:icon="@drawable/ic_na_kana"
+        android:title="@string/nav_kana" />
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="@string/nav_settings" />
+
+    <item
+        android:id="@+id/navigation_about"
+        android:icon="@drawable/ic_info_outline_black_24dp"
+        android:title="@string/nav_about" />
+
+</menu>
